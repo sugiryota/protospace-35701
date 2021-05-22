@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 def create
   @comment = Comment.new(comment_params)
   if @comment.save
-    redirect_to root_path(@comment.prototype)
+    redirect_to prototype_path(@comment.prototype)
   else
     @prototype = @comment.prototype
     @comments = @prototype.comments
